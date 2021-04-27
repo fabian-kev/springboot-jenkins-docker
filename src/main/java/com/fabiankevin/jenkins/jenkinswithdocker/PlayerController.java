@@ -18,7 +18,7 @@ public class PlayerController {
         return Arrays.asList(
             Player.builder()
                     .id( random.nextLong() )
-                    .name("Chotto matte")
+                    .name("Chotto")
                     .character(
                             Character.builder()
                                     .id(random.nextLong())
