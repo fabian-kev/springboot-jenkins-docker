@@ -1,7 +1,4 @@
 node {
-    stage('SCM Checkout') {
-        git 'https://github.com/fabian-kev/springboot-jenkins-docker.git'
-    }
     stage('Gradle Build') {
        def home = tool name: '6.7', type: 'gradle'
        bat "${home}/bin/gradle clean build"
