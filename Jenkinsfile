@@ -1,7 +1,6 @@
 node {
     stage('SCM Checkout') {
-        properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/fabian-kev/springboot-jenkins-docker.git/'], pipelineTriggers([pollSCM('* * * * *')])])
-//         git 'https://github.com/fabian-kev/springboot-jenkins-docker.git'
+        git 'https://github.com/fabian-kev/springboot-jenkins-docker.git'
     }
     stage('Gradle Build') {
        def home = tool name: '6.7', type: 'gradle'
