@@ -22,7 +22,7 @@ public class PlayerController {
                     .character(
                             Character.builder()
                                     .id(random.nextLong())
-                                    .name("Sniper")
+                                    .name("Assassin")
                                     .build()
                     )
                     .build(),
