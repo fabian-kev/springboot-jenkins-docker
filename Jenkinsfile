@@ -1,3 +1,4 @@
+properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/fabian-kev/springboot-jenkins-docker.git/'], pipelineTriggers([pollSCM('* * * * *')])])
 node {
     stage('SCM Checkout') {
         git 'https://github.com/fabian-kev/springboot-jenkins-docker.git'
