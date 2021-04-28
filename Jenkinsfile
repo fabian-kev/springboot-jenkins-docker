@@ -9,7 +9,7 @@ node {
     }
 
     stage('Docker build image') {
-       bat "docker build -t fbiankevin/oasis . --force-rm"
+       bat "docker build -t fbiankevin/oasis"
 
     }
 
