@@ -19,8 +19,6 @@ node {
 
     stage('Printing out the variables'){
         echo "Commit ${env.GIT_COMMIT}"
-         echo "Name ${NAME}"
-          echo "Version ${VERSION}"
           echo "Brancch ${env.BRANCH_NAME}"
     }
 
