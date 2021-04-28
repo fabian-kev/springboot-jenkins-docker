@@ -13,9 +13,17 @@ node {
 
     }
 
+    stage('Printing out the variables'){
+        echo "Commit ${env.GIT_COMMIT}"
+         echo "Name ${NAME}"
+          echo "Version ${VERSION}"
+          echo "Brancch ${env.BRANCH_NAME}"
+    }
+
     stage('Docker push image'){
         withCredentials([usernamePassword(credentialsId: 'Dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
               bat "docker login -u ${username} -p ${password}"
+
               bat 'docker push fbiankevin/oasis'
         }
     }
