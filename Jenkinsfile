@@ -1,3 +1,7 @@
+environment {
+    DOCKER_ID = "fbiankevin"
+}
+
 properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/fabian-kev/springboot-jenkins-docker.git/'], pipelineTriggers([pollSCM('* * * * *')])])
 node {
     stage('SCM Checkout') {
@@ -24,7 +28,7 @@ node {
         withCredentials([usernamePassword(credentialsId: 'Dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
               bat "docker login -u ${username} -p ${password}"
 
-              bat 'docker push fbiankevin/oasis'
+              bat "docker push ${DOCKER_ID}/oasis"
         }
     }
 }
