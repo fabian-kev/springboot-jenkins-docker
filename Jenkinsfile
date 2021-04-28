@@ -9,7 +9,7 @@ node {
     }
 
     stage('Docker build image') {
-       bat "docker build -t fbiankevin/oasis"
+       bat "docker build -t fbiankevin/oasis ."
 
     }
 
