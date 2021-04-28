@@ -17,16 +17,10 @@ node {
 
     }
 
-    stage('Printing out the variables'){
-        echo "Commit ${env.GIT_COMMIT}"
-          echo "Brancch ${env.BRANCH_NAME}"
-    }
-
     stage('Docker push image'){
         withCredentials([usernamePassword(credentialsId: 'Dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
               bat "docker login -u ${username} -p ${password}"
-
-              bat "docker push ${DOCKER_ID}/oasis"
+              bat "docker push ${env.DOCKER_ID}/oasis"
         }
     }
 }
